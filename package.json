@@ -1,30 +1,33 @@
 {
-  "name": "gridsearch",
-  "widgetName": "GridSearch",
-  "version": "1.0.0",
-  "description": "A modern replacement for the Dojo GridSearch widgets.",
-  "author": "Anthony Delorie",
-  "license": "Apache-2.0",
-  "private": true,
-  "config": {
-    "projectPath": "../../../widgets",
-    "mendixHost": "http://localhost:8080",
-    "developmentPort": "3000"
-  },
-  "packagePath": "com.qvine.soar.widgets.gridsearch",
-  "scripts": {
-    "start": "pluggable-widgets-tools start:web",
+    "name": "anysearch",
+    "widgetName": "AnySearch",
+    "version": "1.0.0",
+    "description": "Flexible search widget with paging, sort, and hide-list support",
+    "copyright": "©QVine 2025. All rights reserved.",
+    "author": "Anthony",
+	"config": {
+        "widgetPath": "../../../widgets",
+        "projectPath": "../AnySearchWidgetTestApp/",
+        "mendixHost": "http://localhost:8080",
+        "developmentPort": 3000
+    },
+    "packagePath": "com.qvine.soar.widgets",
+    "scripts": {
+    "start": "concurrently \"pluggable-widgets-tools start:server --open\" \"npm:dev\"",
+    "dev": "pluggable-widgets-tools start:web",
     "build": "pluggable-widgets-tools build:web",
     "lint": "pluggable-widgets-tools lint",
-    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
-    "release": "pluggable-widgets-tools release:web"
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web",
+    "format": "prettier --write ."
   },
+  "license": "Apache-2.0",
   "devDependencies": {
     "@mendix/pluggable-widgets-tools": "10.21.2",
     "@types/big.js": "6.2.2",
     "@types/jest": "30.0.0",
     "@types/node": "24.0.15",
-    "@types/react": "^18.2.0",
     "eslint": "9.2.0",
     "prettier": "3.6.2",
     "shx": "0.4.0",
@@ -42,8 +45,7 @@
     "@types/react-dom": "18.2.0"
   },
   "dependencies": {
-    "classnames": "^2.5.1",
-    "typescript-eslint": "^8.41.0"
+    "classnames": "^2.5.1"
   },
   "resolutions": {
     "react": "18.2.0",
@@ -51,4 +53,5 @@
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0"
   }
+
 }

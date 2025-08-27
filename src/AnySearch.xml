@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="com.qvine.soar.widgets.anysearch.AnySearch" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    
+    <name>AnySearch</name>
+    <description>A flexible search widget for Mendix grids that applies XPath constraints to datasources</description>
+    
+    <properties>
+        <propertyGroup caption="Target Grid">
+            <property key="targetGridName" type="string" required="false">
+                <caption>Grid Name</caption>
+                <description>The name/ID of the target grid to control (e.g. "MyDataGrid")</description>
+            </property>
+            
+            <property key="targetGridClass" type="string" required="false">
+                <caption>Grid CSS Class</caption>
+                <description>The CSS class of the target grid to control (alternative to Grid Name)</description>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Search and Filter">
+            <property key="xpathAttribute" type="attribute" required="true">
+                <caption>XPath Constraint</caption>
+                <description>Attribute containing the XPath constraint to filter the grid (e.g. "[Name = 'John']")</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="sortAttribute" type="attribute" required="false">
+                <caption>Sort Configuration</caption>
+                <description>JSON array defining sort order: [["AttributeName", "asc"], ["OtherAttribute", "desc"]]</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Pagination">
+            <property key="pagesizeAttribute" type="attribute" required="false">
+                <caption>Page Size</caption>
+                <description>Number of items per page (e.g., 10, 20, 50)</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Long"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="offsetAttribute" type="attribute" required="false">
+                <caption>Page Offset</caption>
+                <description>Starting position for pagination (item-based, not page-based)</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Long"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="countAttribute" type="attribute" required="false">
+                <caption>Total Count</caption>
+                <description>Receives the total number of items matching the filter</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Long"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="startAttribute" type="attribute" required="false">
+                <caption>Page Start Index</caption>
+                <description>Index of first item on current page (for "X - Y of Z" display)</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Long"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="endAttribute" type="attribute" required="false">
+                <caption>Page End Index</caption>
+                <description>Index of last item on current page (for "X - Y of Z" display)</description>
+                <attributeTypes>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Long"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Display and Labels">
+            <property key="filterLabelName" type="string" required="false">
+                <caption>Filter Label</caption>
+                <description>Prefix text for active filter display (e.g., "Status:", "Category:")</description>
+            </property>
+            
+            <property key="labelAttribute" type="attribute" required="true">
+                <caption>Filter Value Display</caption>
+                <description>Attribute containing the human-readable filter value for display</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                    <attributeType name="Enum"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="hideList" type="attribute" required="false">
+                <caption>Hide During Loading</caption>
+                <description>Boolean attribute to hide/show the grid while loading</description>
+                <attributeTypes>
+                    <attributeType name="Boolean"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+        
+        <propertyGroup caption="Actions">
+            <property key="onClearNanoflowAction" type="action" required="false">
+                <caption>Clear Filter Nanoflow</caption>
+                <description>Nanoflow to execute when clearing filters (preferred over microflow)</description>
+            </property>
+            
+            <property key="onClearAction" type="action" required="false">
+                <caption>Clear Filter Microflow</caption>
+                <description>Microflow to execute when clearing filters (only used if nanoflow is not set)</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>

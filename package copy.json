@@ -1,0 +1,45 @@
+{
+    "name": "gridsearch",
+    "widgetName": "GridSearch",
+    "version": "1.0.0",
+    "description": "My widget description",
+    "copyright": "©QVine 2025. All rights reserved.",
+    "author": "Anthony",
+    "engines": {
+        "node": ">=16"
+    },
+    "license": "Apache-2.0",
+    "config": {
+        "projectPath": "./tests/testProject",
+        "mendixHost": "http://localhost:8080",
+        "developmentPort": 3000
+    },
+    "packagePath": "mendix",
+    "scripts": {
+        "start": "pluggable-widgets-tools start:server",
+        "dev": "pluggable-widgets-tools start:web",
+        "build": "pluggable-widgets-tools build:web",
+        "lint": "pluggable-widgets-tools lint",
+        "lint:fix": "pluggable-widgets-tools lint:fix",
+        "test": "pluggable-widgets-tools test:unit:web --no-cache --ci && npm run test:e2e",
+        "test:unit": "pluggable-widgets-tools test:unit:web --coverage",
+        "test:e2e": "npx cypress open --browser chrome --e2e",
+        "prerelease": "npm run lint",
+        "release": "pluggable-widgets-tools release:web"
+    },
+    "devDependencies": {
+        "@mendix/pluggable-widgets-tools": "^10.15.0",
+        "cypress": "^10.10.0"
+    },
+    "dependencies": {
+        "classnames": "^2.2.6"
+    },
+    "resolutions": {
+        "react": "^18.2.0",
+        "react-native": "0.72.7"
+    },
+    "overrides": {
+        "react": "^18.2.0",
+        "react-native": "0.72.7"
+    }
+}

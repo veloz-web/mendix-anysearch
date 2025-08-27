@@ -1,0 +1,6 @@
+// constants/grid.ts
+export const GRID_CONNECTION_CONSTANTS = {
+    INITIAL_LOAD_DELAY_MS: 100,
+    DEFAULT_RETRY_ATTEMPTS: 3,
+    DEFAULT_RETRY_DELAY: 500
+} as const;

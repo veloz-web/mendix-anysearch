@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://www.mendix.com/package/1.0/">
-    <clientModule name="GridSearch" version="1.0.0" xmlns="http://www.mendix.com/clientModule/1.0/">
+    <clientModule name="AnySearch" version="1.0.0" xmlns="http://www.mendix.com/clientModule/1.0/">
         <widgetFiles>
-            <!-- This points to your consolidated widget XML file. -->
-            <widgetFile path="./GridSearch.xml"/>
+            <widgetFile path="AnySearch.xml"/>
         </widgetFiles>
         <files>
-            <!-- This tells Mendix to include all the compiled output files. -->
-            <file path="com.qvine.soar.widgets/gridsearch"/>
+            <file path="com.qvine.soar.widgets/anysearch"/>
         </files>
     </clientModule>
 </package>

@@ -1,7 +1,6 @@
+const base = require("@mendix/pluggable-widgets-tools/configs/prettier.base.json");
+
 module.exports = {
-    singleQuote: true,
-    trailingComma: "all",
-    printWidth: 100,
-    tabWidth: 4,
-    semi: true
+    ...base,
+    plugins: [require.resolve("@prettier/plugin-xml")]
 };
